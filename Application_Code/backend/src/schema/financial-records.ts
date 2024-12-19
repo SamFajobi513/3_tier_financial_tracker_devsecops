@@ -17,3 +17,5 @@ const financialRecordSchema = new mongoose.Schema<FinancialRecord>({
   category: { type: String, required: true },
   paymentMethod: { type: String, required: true },
 });
+
+
