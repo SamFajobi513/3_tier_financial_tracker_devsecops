@@ -28,3 +28,21 @@ router.post("/", async (req: Request, res: Response) => {
     res.status(500).send(err);
   }
 });
+
+router.put("/:id", async (req: Request, res: Response) => {
+  try {
+    const id = req.params.id;
+    const newRecordBody = req.body;
+    const record = await FinancialRecordModel.findByIdAndUpdate(
+      id,
+      newRecordBody,
+      { new: true }
+    );
+
+    if (!record) return res.status(404).send();
+
+    res.status(200).send(record);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
