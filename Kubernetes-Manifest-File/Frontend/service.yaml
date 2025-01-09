@@ -3,3 +3,10 @@ kind: Service
 metadata: 
   name: frontend
   namespace: three-tier
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+  type: ClusterIP
+  selector:
+    role: frontend
