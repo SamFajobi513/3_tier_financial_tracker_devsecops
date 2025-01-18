@@ -13,3 +13,10 @@ spec:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 25%    
+  selector:
+    matchLabels: 
+      role: frontend
+  template:
+    metadata:
+      labels:
+        role: frontend    
