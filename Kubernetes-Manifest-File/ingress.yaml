@@ -11,3 +11,13 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
+    - - host: samdevops.study
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service: 
+                name: api
+                port:
+                  number: 3500
